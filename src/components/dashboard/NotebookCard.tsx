@@ -41,8 +41,8 @@ const NotebookCard = ({
 
   // Generate CSS classes from color name
   const colorName = notebook.color || 'gray';
-  const backgroundClass = `bg-${colorName}-100`;
-  const borderClass = `border-${colorName}-200`;
+  const backgroundClass = `bg-${colorName}-900/20`;
+  const borderClass = `border-${colorName}-700/30`;
 
   return <div 
       className={`rounded-lg border ${borderClass} ${backgroundClass} p-4 hover:shadow-md transition-shadow cursor-pointer relative h-48 flex flex-col`}
@@ -50,7 +50,7 @@ const NotebookCard = ({
       <div className="absolute top-3 right-3" data-delete-action="true">
         <AlertDialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
           <AlertDialogTrigger asChild>
-            <button onClick={handleDeleteClick} className="p-1 hover:bg-red-50 rounded text-gray-400 hover:text-red-500 transition-colors delete-button" disabled={isDeleting} data-delete-action="true">
+            <button onClick={handleDeleteClick} className="p-1 hover:bg-red-900/20 rounded-lg text-muted-foreground hover:text-red-400 transition-colors delete-button" disabled={isDeleting} data-delete-action="true">
               <Trash2 className="h-4 w-4" />
             </button>
           </AlertDialogTrigger>
@@ -63,7 +63,7 @@ const NotebookCard = ({
             </AlertDialogHeader>
             <AlertDialogFooter>
               <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction onClick={handleConfirmDelete} className="bg-blue-600 hover:bg-blue-700" disabled={isDeleting}>
+              <AlertDialogAction onClick={handleConfirmDelete} className="bg-primary hover:bg-primary/90" disabled={isDeleting}>
                 {isDeleting ? 'Deleting...' : 'Delete'}
               </AlertDialogAction>
             </AlertDialogFooter>
@@ -75,11 +75,11 @@ const NotebookCard = ({
         <span className="text-3xl">{notebook.icon}</span>
       </div>
       
-      <h3 className="text-gray-900 mb-2 pr-6 line-clamp-2 text-2xl font-normal flex-grow">
+      <h3 className="text-foreground mb-2 pr-6 line-clamp-2 text-2xl font-normal font-heading flex-grow">
         {notebook.title}
       </h3>
       
-      <div className="flex items-center justify-between text-sm text-gray-500 mt-auto">
+      <div className="flex items-center justify-between text-sm text-muted-foreground mt-auto">
         <span>{notebook.date} • {notebook.sources} source{notebook.sources !== 1 ? 's' : ''}</span>
       </div>
     </div>;

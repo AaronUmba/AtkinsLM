@@ -71,16 +71,16 @@ const NotebookGrid = () => {
 
   return <div>
       <div className="flex items-center justify-between mb-8">
-        <Button className="bg-black hover:bg-gray-800 text-white rounded-full px-6" onClick={handleCreateNotebook} disabled={isCreating}>
+        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg px-6" onClick={handleCreateNotebook} disabled={isCreating}>
           {isCreating ? 'Creating...' : '+ Create new'}
         </Button>
         
         <div className="flex items-center space-x-4">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <div className="flex items-center space-x-2 bg-white rounded-lg border px-3 py-2 cursor-pointer hover:bg-gray-50 transition-colors">
-                <span className="text-sm text-gray-600">{sortBy}</span>
-                <ChevronDown className="h-4 w-4 text-gray-400" />
+              <div className="flex items-center space-x-2 bg-card rounded-lg border border-border px-3 py-2 cursor-pointer hover:bg-accent transition-colors">
+                <span className="text-sm text-muted-foreground">{sortBy}</span>
+                <ChevronDown className="h-4 w-4 text-muted-foreground" />
               </div>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-48">

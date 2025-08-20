@@ -60,13 +60,13 @@ const NotebookHeader = ({ title, notebookId }: NotebookHeaderProps) => {
   };
 
   return (
-    <header className="bg-white border-b border-gray-200 px-6 py-4">
+    <header className="bg-card border-b border-border px-6 py-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-2">
             <button 
               onClick={handleIconClick}
-              className="hover:bg-gray-50 rounded transition-colors p-1"
+              className="hover:bg-accent rounded-lg transition-colors p-1"
             >
               <Logo />
             </button>
@@ -76,13 +76,13 @@ const NotebookHeader = ({ title, notebookId }: NotebookHeaderProps) => {
                 onChange={(e) => setEditedTitle(e.target.value)}
                 onKeyDown={handleKeyDown}
                 onBlur={handleBlur}
-                className="text-lg font-medium text-gray-900 border-none shadow-none p-0 h-auto focus-visible:ring-0 min-w-[300px] w-auto"
+                className="text-lg font-medium font-heading text-foreground border-none shadow-none p-0 h-auto focus-visible:ring-0 min-w-[300px] w-auto bg-transparent"
                 autoFocus
                 disabled={isUpdating}
               />
             ) : (
               <span 
-                className="text-lg font-medium text-gray-900 cursor-pointer hover:bg-gray-50 rounded px-2 py-1 transition-colors"
+                className="text-lg font-medium font-heading text-foreground cursor-pointer hover:bg-accent rounded-lg px-2 py-1 transition-colors"
                 onClick={handleTitleClick}
               >
                 {title}
@@ -96,7 +96,7 @@ const NotebookHeader = ({ title, notebookId }: NotebookHeaderProps) => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm" className="p-0">
-                  <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center cursor-pointer hover:bg-purple-600 transition-colors">
+                  <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/90 transition-colors">
                     <User className="h-4 w-4 text-white" />
                   </div>
                 </Button>

@@ -102,7 +102,7 @@ const AuthForm = () => {
               minLength={6}
             />
           </div>
-          <Button type="submit" className="w-full" disabled={loading}>
+          <Button type="submit" className="w-full bg-primary hover:bg-primary/90" disabled={loading}>
             {loading ? 'Signing In...' : 'Sign In'}
           </Button>
         </form>

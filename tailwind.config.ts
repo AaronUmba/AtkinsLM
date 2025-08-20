@@ -11,18 +11,18 @@ export default {
 	prefix: "",
 	safelist: [
 		// Background colors for notebook cards
-		'bg-red-100', 'bg-blue-100', 'bg-green-100', 'bg-yellow-100', 'bg-purple-100', 
-		'bg-pink-100', 'bg-indigo-100', 'bg-gray-100', 'bg-orange-100', 'bg-teal-100',
-		'bg-cyan-100', 'bg-emerald-100', 'bg-lime-100', 'bg-amber-100', 'bg-violet-100',
-		'bg-fuchsia-100', 'bg-rose-100', 'bg-sky-100', 'bg-slate-100', 'bg-zinc-100',
-		'bg-neutral-100', 'bg-stone-100',
+		'bg-red-900/20', 'bg-blue-900/20', 'bg-green-900/20', 'bg-yellow-900/20', 'bg-purple-900/20', 
+		'bg-pink-900/20', 'bg-indigo-900/20', 'bg-gray-900/20', 'bg-orange-900/20', 'bg-teal-900/20',
+		'bg-cyan-900/20', 'bg-emerald-900/20', 'bg-lime-900/20', 'bg-amber-900/20', 'bg-violet-900/20',
+		'bg-fuchsia-900/20', 'bg-rose-900/20', 'bg-sky-900/20', 'bg-slate-900/20', 'bg-zinc-900/20',
+		'bg-neutral-900/20', 'bg-stone-900/20',
 		// Border colors for notebook cards
-		'border-red-200', 'border-blue-200', 'border-green-200', 'border-yellow-200', 
-		'border-purple-200', 'border-pink-200', 'border-indigo-200', 'border-gray-200', 
-		'border-orange-200', 'border-teal-200', 'border-cyan-200', 'border-emerald-200', 
-		'border-lime-200', 'border-amber-200', 'border-violet-200', 'border-fuchsia-200', 
-		'border-rose-200', 'border-sky-200', 'border-slate-200', 'border-zinc-200',
-		'border-neutral-200', 'border-stone-200',
+		'border-red-700/30', 'border-blue-700/30', 'border-green-700/30', 'border-yellow-700/30', 
+		'border-purple-700/30', 'border-pink-700/30', 'border-indigo-700/30', 'border-gray-700/30', 
+		'border-orange-700/30', 'border-teal-700/30', 'border-cyan-700/30', 'border-emerald-700/30', 
+		'border-lime-700/30', 'border-amber-700/30', 'border-violet-700/30', 'border-fuchsia-700/30', 
+		'border-rose-700/30', 'border-sky-700/30', 'border-slate-700/30', 'border-zinc-700/30',
+		'border-neutral-700/30', 'border-stone-700/30',
 	],
 	theme: {
 		container: {
@@ -33,7 +33,20 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'sans': ['Noto Sans', 'sans-serif'],
+				'heading': ['IBM Plex Sans', 'sans-serif'],
+			},
 			colors: {
+				// AtkinsRealis color palette
+				'atkins': {
+					'dark': '#1A2D39',
+					'light': '#BEDAE5',
+					'accent': '#05E660',
+					'grey-dark': '#2A3F4B',
+					'grey-medium': '#4A5F6B',
+					'grey-light': '#8A9FA5',
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -79,9 +92,10 @@ export default {
 				}
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				lg: '12px',
+				md: '10px',
+				sm: '8px',
+				DEFAULT: '8px'
 			},
 			keyframes: {
 				'accordion-down': {
