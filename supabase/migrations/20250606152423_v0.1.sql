@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS public.documents (
     id bigserial PRIMARY KEY,
     content text,
     metadata jsonb,
-    embedding vector(1536)
+    embedding vector(768)
 );
 
 -- ============================================================================
