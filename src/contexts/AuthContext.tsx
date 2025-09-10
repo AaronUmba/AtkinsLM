@@ -47,7 +47,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     console.log('AuthContext: Clearing auth state');
     setSession(null);
     setUser(null);
-    setError(null);
   };
 
   const signOut = async () => {
@@ -124,6 +123,19 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     const initializeAuth = async () => {
       try {
         console.log('AuthContext: Initializing auth...');
+        
+        // Check if Supabase is properly configured
+        const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+        const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+        
+        if (!supabaseUrl || !supabaseKey) {
+          console.error('AuthContext: Missing Supabase configuration');
+          if (mounted) {
+            setError('Supabase configuration missing. Please check your environment variables.');
+            setLoading(false);
+          }
+          return;
+        }
         
         // Get initial session
         const { data: { session: initialSession }, error: sessionError } = await supabase.auth.getSession();
